@@ -49,7 +49,7 @@ class TaskController extends Controller
                 $lastPageItem = $document->find('.pagination-page')->filter(':last')->attr('href');
 
                 if (!empty($lastPageItem)) {
-                    $lastPageIndex = parse_url();
+                    $lastPageIndex = parse_url($lastPageItem);
                     preg_match('/.*p=(\d+)/', $lastPageIndex['query'], $lastPageIndex);
                     $lastPageIndex = (int) $lastPageIndex[1];
                 } else
